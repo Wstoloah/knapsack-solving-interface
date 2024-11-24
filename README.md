@@ -108,17 +108,9 @@ Cette interface Dash permet de résoudre le problème du sac à dos en généran
 2. **Interface inaccessible** :
    - Vérifiez que le serveur Dash est bien lancé et que le port 8050 n'est pas bloqué.
 
----
-
-#### **Contributions**
-Les contributions sont les bienvenues ! Créez une branche et soumettez une pull request.
 
 ---
 
 #### **Auteur**
 - **Nom** : Ouissal Boutouatou  
-- **Contact** : [Votre email ou GitHub]  
 
----
-
-Amusez-vous à résoudre des problèmes complexes avec cette interface ! 🚀
