@@ -8,41 +8,53 @@ app = dash.Dash(__name__, external_stylesheets=["custom.css"])
 
 # Mise en page de l'application
 app.layout = html.Div([
-    html.H1("Problème du sac à dos", style={'textAlign': 'center'}),
-    html.Hr(style={'marginBottom': '20px', 'border': '1px solid #000000'}),
+    html.H1("🎒 Problème du Sac à Dos"),
 
-    # Inputs with padding
+    html.Hr(),
+
     html.Div([
         html.Div([
-            html.Label("Nombre d'objets :", style={'marginRight': '10px', 'marginLeft': '20px'}),
-            dcc.Input(id='num_items', type='number', value=100, min=1, max=1000, step=1),
-            html.Label("Capacité maximale du sac à dos :", style={'marginRight': '10px', 'marginLeft': '10px'}),
-            dcc.Input(id='max_capacity', type='number', value=50, min=1, max=500, step=1),
-            html.Label("Valeur maximale d'un objet :", style={'marginRight': '10px', 'marginLeft': '10px'}),
-            dcc.Input(id='max_value', type='number', value=100, min=1, max=100, step=1)
-        ], style={'marginBottom': '20px', 'display': 'flex', 'alignItems': 'center'}),
+            html.Label("Nombre d'objets :"),
+            dcc.Input(id='num_items', type='number', value=100, min=1, max=1000, step=1, className='dash-input'),
+
+            html.Label("Capacité maximale :"),
+            dcc.Input(id='max_capacity', type='number', value=50, min=1, max=500, step=1, className='dash-input'),
+
+            html.Label("Valeur maximale d'un objet :"),
+            dcc.Input(id='max_value', type='number', value=100, min=1, max=100, step=1, className='dash-input'),
+
+            html.Button("🎲 Générer Objets", id='generate_button', n_clicks=0, className='dash-button'),
+        ], style={
+            'display': 'flex',
+            'gap': '20px',
+            'flexWrap': 'wrap',
+            'alignItems': 'center',
+            'margin': '0 auto',
+            'padding': '10px 20px',
+            'maxWidth': '900px',
+            'justifyContent': 'center'
+        }),
     ]),
 
-    # Buttons
-    html.Button("Lister les objets disponibles", id='generate_button', n_clicks=0, style={'marginLeft': '20px'}),
+    dcc.Store(id='available_items_store'),
 
-    dcc.Store(id='available_items_store'),  # Stocker les objets disponibles
-
-    # Containers for tables
     html.Div([
-        html.Div(id='available_items_container', style={'width': '47%', 'marginRight': '3%', 'marginLeft': '20px'}),
-        html.Div(id='optimization_results_container', style={'width': '47%'}),
-    ], style={'display': 'flex', 'marginTop': '20px'}),
+        html.Div(id='available_items_container', style={'width': '48%'}),
+        html.Div(id='optimization_results_container', style={'width': '48%'}),
+    ], style={'display': 'flex', 'gap': '4%', 'padding': '0 20px'}),
 
-    # Buttons and download
     html.Div([
-        html.Div(html.Button("Lancer l'optimisation", id='optimize_button', n_clicks=0, style={'display': 'none'}),
-                 style={'width': '47%', 'marginRight': '3%', 'marginLeft': '20px'}),
-        html.Div(html.Button("Télécharger les résultats", id='download_button', n_clicks=0, style={'display': 'none'}),
-                 style={'width': '47%', 'marginRight': '3%', 'marginLeft': '20px'}),
+        html.Button("🚀 Lancer l'optimisation", id='optimize_button', n_clicks=0, className='dash-button', style={'display': 'none'}),
+        html.Button("⬇️ Télécharger les résultats", id='download_button', n_clicks=0, style={'display': 'none'}),
         dcc.Download(id="download_data"),
-    ], style={'display': 'flex', 'marginTop': '20px'}),
+    ], style={
+        'display': 'flex',
+        'gap': '20px',
+        'justifyContent': 'center',
+        'padding': '20px'
+    }),
 ])
+
 
 # Callback pour gérer les objets disponibles
 @app.callback(
