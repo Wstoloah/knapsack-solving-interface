@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e2e8c3 0%, #c8b247 100%);
+    background: linear-gradient(135deg, #f2f4f7 0%, #dbe5eb 100%);
     min-height: 100vh;
     color: #2c3e50;
     line-height: 1.6;
@@ -35,7 +35,7 @@ body {
 .main-title {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #519aed, #0344f7);
+    background: linear-gradient(135deg, #3498db, #1d78c1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -54,7 +54,7 @@ body {
 .header-divider {
     width: 100px;
     height: 4px;
-    background: linear-gradient(135deg, #519aed, #0344f7);
+    background: linear-gradient(135deg, #3498db, #1d78c1);
     border: none;
     border-radius: 2px;
     margin: 30px auto;
@@ -107,8 +107,8 @@ body {
 
 .config-input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
     transform: translateY(-1px);
 }
 
@@ -141,22 +141,22 @@ body {
 }
 
 .primary-button {
-    background: linear-gradient(135deg, #2980b9, #0344f7);
+    background: linear-gradient(135deg, #3498db, #1d78c1);
     color: white;
 }
 
 .secondary-button {
-    background: linear-gradient(135deg, #a4c8ca, #00f2ff);
+    background: linear-gradient(135deg, #6bc7bd, #1ca89c);
     color: white;
 }
 
 .success-button {
-    background: linear-gradient(135deg, #56ab2f, #a8e6c7);
+    background: linear-gradient(135deg, #27ae60, #20c997);
     color: white;
 }
 
 .info-button {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #2980b9, #2471a3);
     color: white;
 }
 
@@ -219,11 +219,11 @@ body {
 }
 
 .table-stats {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, #fefefe, #f1f5f9);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #3498db;
 }
 
 .table-stats p {
@@ -278,7 +278,7 @@ body {
 }
 
 .metric-card {
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    background: linear-gradient(135deg, #ffffff, #f0f4f8);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
@@ -296,7 +296,7 @@ body {
 .metric-value {
     font-size: 2rem;
     font-weight: 700;
-    color: #667eea;
+    color: #3498db;
     margin-bottom: 5px;
 }
 
@@ -344,9 +344,9 @@ body {
     color: #6c757d;
     font-style: italic;
     padding: 40px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border: 2px dashed #cbd5e1;
     border-radius: 12px;
-    border: 2px dashed #dee2e6;
 }
 
 /* Responsive design */
